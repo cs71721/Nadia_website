@@ -125,17 +125,20 @@
             flex-wrap: wrap;
         }
         
-        .photo-placeholder {
+        .photo-container {
             width: 200px;
             height: 250px;
-            background: linear-gradient(135deg, var(--sage-green), var(--teal-light));
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-style: italic;
+            overflow: hidden;
             flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
         
         .about-text {
@@ -279,7 +282,7 @@
                 align-items: center;
             }
             
-            .photo-placeholder {
+            .photo-container {
                 width: 150px;
                 height: 200px;
             }
@@ -315,8 +318,8 @@
             <section id="about">
                 <h2>About Me</h2>
                 <div class="about-content">
-                    <div class="photo-placeholder">
-                        [Photo]
+                    <div class="photo-container">
+                        <img src="nadia-photo.png" alt="Nadia Jemiai - Integrative Counsellor">
                     </div>
                     <div class="about-text">
                         <p>Sometimes, life can feel overwhelming — you might find yourself anxious, stuck, low, or unsure of your direction or sense of who you are. These feelings can become stronger during periods of change, such as moving somewhere new, becoming a parent, changing jobs, leaving university, or navigating relationships.</p>
