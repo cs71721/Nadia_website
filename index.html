@@ -12,20 +12,22 @@
         }
         
         :root {
-            --teal-dark: #0d5f5f;
-            --teal-medium: #106b6b;
-            --teal-light: #1a8080;
-            --forest-green: #2a5434;
+            --teal-dark: #5a9b9b;
+            --teal-medium: #6eb3b3;
+            --teal-light: #a8d5d5;
+            --coral: #e89a8a;
+            --coral-light: #f5b5a7;
             --sage-green: #87a878;
-            --cream: #faf9f6;
+            --cream: #f5f0e8;
             --warm-white: #ffffff;
-            --text-dark: #2c3e50;
-            --text-light: #5a6c7d;
+            --beige: #e8ddd0;
+            --text-dark: #5a6b6b;
+            --text-light: #8a9a9a;
         }
         
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
             color: var(--text-dark);
             background-color: var(--cream);
         }
@@ -38,25 +40,33 @@
         
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--teal-medium), var(--teal-dark));
-            padding: 60px 0;
+            background: linear-gradient(135deg, var(--teal-light), var(--teal-medium));
+            padding: 50px 0;
             text-align: center;
             color: var(--warm-white);
         }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: block;
         }
         
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            color: var(--warm-white);
+        }
+
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-style: italic;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            color: var(--warm-white);
             font-weight: 300;
+            opacity: 0.95;
         }
         
         /* Navigation */
@@ -104,16 +114,15 @@
             color: var(--teal-dark);
             font-size: 1.8rem;
             margin-bottom: 20px;
-            font-weight: 400;
-            border-bottom: 2px solid var(--sage-green);
-            padding-bottom: 10px;
+            font-weight: 500;
+            border-bottom: 3px solid var(--coral);
+            padding-bottom: 12px;
         }
         
         p {
             margin-bottom: 15px;
             color: var(--text-dark);
-            font-family: 'Arial', sans-serif;
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
         }
         
@@ -128,10 +137,10 @@
         .photo-container {
             width: 200px;
             height: 250px;
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
             flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
 
         .photo-container img {
@@ -155,11 +164,17 @@
         }
         
         .service-card {
-            background: linear-gradient(to bottom, white, #f9fafb);
+            background: linear-gradient(to bottom, white, var(--cream));
             padding: 30px;
-            border-radius: 10px;
-            border-left: 4px solid var(--teal-medium);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            border-left: 5px solid var(--coral);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         }
         
         .service-card h3 {
@@ -184,19 +199,19 @@
         
         .qualifications-list li:before {
             content: "•";
-            color: var(--teal-medium);
+            color: var(--coral);
             position: absolute;
             left: 0;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         
         /* Fees Section */
         .fees-info {
-            background-color: #f9fafb;
-            padding: 30px;
-            border-radius: 10px;
+            background-color: var(--cream);
+            padding: 35px;
+            border-radius: 15px;
             margin-top: 20px;
-            border: 1px solid #e0e0e0;
+            border: 2px solid var(--beige);
         }
         
         .fee-item {
@@ -222,12 +237,13 @@
         
         /* Contact Section */
         .contact-info {
-            background: linear-gradient(135deg, var(--teal-light), var(--teal-medium));
+            background: linear-gradient(135deg, var(--coral-light), var(--coral));
             color: white;
-            padding: 40px;
-            border-radius: 10px;
+            padding: 45px;
+            border-radius: 20px;
             text-align: center;
             margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(232, 154, 138, 0.3);
         }
         
         .contact-info h3 {
@@ -296,6 +312,7 @@
 <body>
     <header>
         <div class="container">
+            <img src="logo.png" alt="Logo" class="logo">
             <h1>Nadia Jemiai</h1>
             <p class="tagline">Creating space for clarity, resilience, and self-connection</p>
         </div>
