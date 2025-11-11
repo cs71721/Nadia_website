@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadia Jemiai - Integrative Counselling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --teal-dark: #0d5f5f;
+            --teal-medium: #106b6b;
+            --teal-light: #1a8080;
+            --forest-green: #2a5434;
+            --sage-green: #87a878;
+            --cream: #faf9f6;
+            --warm-white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #5a6c7d;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--cream);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--teal-medium), var(--teal-dark));
+            padding: 60px 0;
+            text-align: center;
+            color: var(--warm-white);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.95;
+            font-family: 'Arial', sans-serif;
+            font-weight: 300;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--warm-white);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--teal-dark);
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+        
+        nav a:hover {
+            color: var(--teal-light);
+        }
+        
+        /* Main Content */
+        main {
+            background-color: var(--warm-white);
+            padding: 60px 0;
+        }
+        
+        section {
+            margin-bottom: 60px;
+        }
+        
+        h2 {
+            color: var(--teal-dark);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+            border-bottom: 2px solid var(--sage-green);
+            padding-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-family: 'Arial', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        /* About Section with Photo */
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .photo-placeholder {
+            width: 200px;
+            height: 250px;
+            background: linear-gradient(135deg, var(--sage-green), var(--teal-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-style: italic;
+            flex-shrink: 0;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .service-card {
+            background: linear-gradient(to bottom, white, #f9fafb);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--teal-medium);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .service-card h3 {
+            color: var(--teal-dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+        
+        /* Qualifications List */
+        .qualifications-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .qualifications-list li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .qualifications-list li:before {
+            content: "•";
+            color: var(--teal-medium);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Fees Section */
+        .fees-info {
+            background-color: #f9fafb;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .fee-item:last-child {
+            border-bottom: none;
+        }
+        
+        .fee-label {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .fee-amount {
+            color: var(--teal-dark);
+            font-weight: 400;
+        }
+        
+        /* Contact Section */
+        .contact-info {
+            background: linear-gradient(135deg, var(--teal-light), var(--teal-medium));
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .contact-info p {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+        }
+        
+        .contact-info a:hover {
+            border-bottom-color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--teal-dark);
+            color: var(--warm-white);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            color: var(--warm-white);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .photo-placeholder {
+                width: 150px;
+                height: 200px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nadia Jemiai</h1>
+            <p class="tagline">Creating space for clarity, resilience, and self-connection</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-i-work">How I Work</a></li>
+                <li><a href="#qualifications">Qualifications</a></li>
+                <li><a href="#fees">Fees</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="photo-placeholder">
+                        [Photo]
+                    </div>
+                    <div class="about-text">
+                        <p>Sometimes, life can feel overwhelming — you might find yourself anxious, stuck, low, or unsure of your direction or sense of who you are. These feelings can become stronger during periods of change, such as moving somewhere new, becoming a parent, changing jobs, leaving university, or navigating relationships.</p>
+                        
+                        <p>As an integrative therapist, I offer a calm, compassionate, and confidential space where you can express yourself freely and be heard. Together, we explore your experiences and gently process challenges to support a deeper understanding of yourself, your needs, and what truly matters to you.</p>
+                        
+                        <p>Through a collaborative and reflective approach, we work towards clarity, resilience, and self-connection — creating space to quiet the noise and support your growth.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-i-work">
+                <h2>How I Work</h2>
+                <p>I offer sessions online and in person, drawing on person-centred, psychodynamic, and CBT approaches, tailored to your individual needs and what arises in our work together.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Online Sessions</h3>
+                        <p>Flexible online counselling sessions via secure video platform, offering convenience and accessibility from wherever you feel comfortable.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>In-Person Sessions</h3>
+                        <p>Face-to-face sessions in a calm, private setting where you can explore your thoughts and feelings in a safe, confidential space.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Languages</h3>
+                        <p>Sessions available in both English and French, allowing you to express yourself in the language that feels most natural to you.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="qualifications">
+                <h2>Qualifications</h2>
+                <ul class="qualifications-list">
+                    <li>Diploma in Counselling</li>
+                    <li>MSc in Health Policy</li>
+                    <li>BA in Social Studies of Medicine</li>
+                    <li>Registered Member of BACP (British Association for Counselling and Psychotherapy)</li>
+                </ul>
+            </section>
+
+            <section id="fees">
+                <h2>Fees</h2>
+                <div class="fees-info">
+                    <div class="fee-item">
+                        <span class="fee-label">Individual Session (50 minutes)</span>
+                        <span class="fee-amount">£60</span>
+                    </div>
+                    <div class="fee-item">
+                        <span class="fee-label">Initial Consultation (30 minutes)</span>
+                        <span class="fee-amount">Free</span>
+                    </div>
+                    <div class="fee-item">
+                        <span class="fee-label">Reduced Rate Available</span>
+                        <span class="fee-amount">Please enquire</span>
+                    </div>
+                    <p style="margin-top: 20px; font-style: italic; color: var(--text-light);">
+                        I offer a limited number of reduced-fee sessions. Please don't hesitate to discuss your circumstances during our initial consultation.
+                    </p>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Email: <a href="mailto:contact@nadiajemiai.com">contact@nadiajemiai.com</a></p>
+                    <p>Phone: Available upon request</p>
+                    <p style="margin-top: 30px; font-size: 0.95rem;">
+                        I aim to respond to all enquiries within 48 hours. Your initial consultation is free and gives us an opportunity to discuss your needs and see if we're a good fit to work together.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nadia Jemiai | Integrative Counselling | BACP Member</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
