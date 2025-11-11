@@ -51,7 +51,7 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 40px;
         }
 
         /* Animations */
@@ -81,8 +81,11 @@
             background: linear-gradient(-45deg, var(--teal-dark), var(--teal-medium), var(--teal-light), var(--teal-very-light));
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
-            padding: 100px 0;
-            text-align: center;
+            padding: 100px 0 80px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: var(--warm-white);
             position: relative;
             overflow: hidden;
@@ -100,11 +103,11 @@
 
         .header-content {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 30px;
+            gap: 30px;
+            margin-bottom: 35px;
             animation: fadeInUp 1s ease;
             position: relative;
             z-index: 1;
@@ -145,6 +148,8 @@
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.7;
+            text-align: center;
+            padding: 0 20px;
         }
         
         /* Sticky Shrinking Header */
@@ -281,11 +286,11 @@
         /* Main Content */
         main {
             background-color: var(--warm-white);
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         section {
-            margin-bottom: 120px;
+            margin-bottom: 100px;
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.6s ease;
@@ -296,6 +301,10 @@
             transform: translateY(0);
         }
 
+        section:last-child {
+            margin-bottom: 0;
+        }
+
         h2 {
             font-family: 'Playfair Display', serif;
             color: var(--teal-dark);
@@ -304,6 +313,7 @@
             font-weight: 500;
             position: relative;
             padding-bottom: 20px;
+            text-align: left;
         }
 
         h2::after {
@@ -532,13 +542,16 @@
         .contact-info {
             background: linear-gradient(135deg, var(--teal-medium), var(--teal-dark));
             color: white;
-            padding: 60px 50px;
+            padding: 60px 60px;
             border-radius: 30px;
-            text-align: left;
+            text-align: center;
             margin-top: 50px;
             box-shadow: 0 15px 50px rgba(74, 124, 126, 0.2);
             position: relative;
             overflow: hidden;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-info::before {
@@ -555,7 +568,7 @@
         .contact-info h3 {
             font-family: 'Inter', sans-serif;
             font-size: 1.8rem;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             font-weight: 600;
             position: relative;
         }
@@ -563,7 +576,7 @@
         .contact-info p {
             color: white;
             font-size: 1.1rem;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             position: relative;
             font-family: 'Inter', sans-serif;
             max-width: none;
@@ -615,12 +628,22 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 25px;
+            }
+
             header {
-                padding: 70px 0;
+                padding: 60px 0 50px 0;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
             }
 
             h1 {
                 font-size: 2rem;
+                text-align: center;
             }
 
             .logo {
@@ -628,8 +651,9 @@
                 height: 120px;
             }
 
-            .header-content {
-                gap: 20px;
+            .tagline {
+                font-size: 1.15rem;
+                padding: 0 15px;
             }
 
             .sticky-header-content {
@@ -650,7 +674,9 @@
             }
 
             nav ul {
-                gap: 20px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             nav a {
@@ -663,7 +689,17 @@
             }
 
             section {
-                margin-bottom: 80px;
+                margin-bottom: 70px;
+            }
+
+            h2 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            h2::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             .about-content {
@@ -693,23 +729,57 @@
                 padding: 35px 25px;
             }
 
-
             .contact-info {
-                padding: 50px 30px;
+                padding: 45px 30px;
+                margin-top: 40px;
+            }
+
+            .contact-info h3 {
+                font-size: 1.5rem;
+                margin-bottom: 25px;
+            }
+
+            .contact-info p {
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            header {
+                padding: 50px 0 40px 0;
+            }
+
             h1 {
                 font-size: 1.8rem;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
             }
 
             .tagline {
                 font-size: 1rem;
             }
 
+            h2 {
+                font-size: 1.75rem;
+            }
+
             p {
                 font-size: 1rem;
+            }
+
+            .contact-info {
+                padding: 35px 25px;
+            }
+
+            .contact-info h3 {
+                font-size: 1.3rem;
             }
         }
     </style>
