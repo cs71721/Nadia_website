@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
     <title>Nadia Jemiai - Integrative Counselling</title>
     <style>
         * {
@@ -28,6 +31,8 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--cream);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         .container {
@@ -84,6 +89,7 @@
             font-family: 'Arial', sans-serif;
             transition: color 0.3s;
             padding: 5px 10px;
+            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
         }
         
         nav a:hover {
@@ -144,6 +150,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            loading: lazy;
         }
         
         .about-text {
@@ -324,7 +331,7 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="photo-placeholder">
-                        <img src="nadia-photo.jpg" alt="Nadia Jemiai - Integrative Therapist">
+                        <img src="nadia-photo.jpg" alt="Nadia Jemiai - Integrative Therapist" loading="lazy" decoding="async">
                     </div>
                     <div class="about-text">
                         <p>Sometimes, life can feel overwhelming — you might find yourself anxious, stuck, low, or unsure of your direction or sense of who you are. These feelings can become stronger during periods of change, such as moving somewhere new, becoming a parent, changing jobs, leaving university, or navigating relationships.</p>
